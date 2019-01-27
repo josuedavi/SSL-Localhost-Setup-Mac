@@ -104,7 +104,8 @@ openssl x509 -text -in server.crt -noout
 #9 Now you want to edit the files you opened in step 3:
 /conf/apache/httpd.cong
 /conf/apache/extra/httpd-ssl.cong
-  #BACKUP YOUR FILES FIRST
+
+#BACKUP YOUR FILES FIRST
 
 #EDITS FOR httpd.conf
 
