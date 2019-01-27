@@ -28,31 +28,51 @@ touch v3.ext
 touch server.csr.cnf
 
 #6 Edit 'v3.ext'
+
 #copy + paste below into 'v3.ext' file, and then save it
 
 authorityKeyIdentifier = keyid, issuer
+<br/>
 basicConstraints = CA:FALSE
+<br/>
 keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment
+<br/>
 subjectAltName = @alt_names
+<br/>
 [alt_names]
+<br/>
 DNS.1 = localhost
+<br/>
 
 #7 edit 'server.csr.cnf' file
 #copy + paste below into 'server.csr.cnf' file, and then save it
 
 [req]
+<br/>
 default_bits= 2048
+<br/>
 prompt= no
+<br/>
 default_md= sha256
+<br/>
 distinguished_name = dn
+<br/>
 [dn]
+<br/>
 C = CA
+<br/>
 ST = ON
+<br/>
 L = Ottawa
+<br/>
 O = End Point
+<br/>
 OU = Testing Domain
+<br/>
 emailAddress = yourname@yourdomain.com
+<br/>
 CN = localhost
+<br/>
 
 #8 run more terminal commands
 #This is just a listing of the commands for generating your SSL certificates
@@ -83,7 +103,8 @@ openssl x509 -text -in server.crt -noout
 #9 Now you want to edit the files you opened in step 3:
 /conf/apache/httpd.cong
 /conf/apache/extra/httpd-ssl.cong
-  #BACKUP YOUR FILES FIRST
+
+#BACKUP YOUR FILES FIRST
 
 #EDITS FOR httpd.conf
 
@@ -127,3 +148,29 @@ Double click your ssl, hit trust select: when using this certificate, then set t
 
 Now the Default MAMP website should open up, to make sure it all worked you want to change your localhost address to have 'https://'
 <img src="ssl-check-running-properly.gif"/>
+
+
+Errors:
+
+
+<img src="notfound.jpg" width="100%" width="400px"/>
+
+
+If you get this error it's because your DocumentRoot is incorrect you need to go: MAMP/conf/apache/extra/httpd-vhost.conf
+Change DocumentRoot to  the location where you want to load your files fron '/Users/YOURUSERNAME/Documents' 
+
+<VirtualHost *:80>
+<br/>
+    DocumentRoot /Users/YOURUSERNAME/Documents
+<br/>
+    ServerName localhost
+<br/>
+<VirtualHost>
+
+<VirtualHost *:80>
+<br/>
+    DocumentRoot "/Users/YOURUSERNAME/Documents"
+<br/>
+<VirtualHost>
+
+And you need to go to the 'httpd.conf' and 'httpd-ssl.conf' change the DocumentRoot
