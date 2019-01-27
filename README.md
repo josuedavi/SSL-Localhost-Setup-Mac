@@ -164,11 +164,9 @@ Change DocumentRoot to  the location where you want to load your files fron '/Us
     DocumentRoot /Users/YOURUSERNAME/Documents
 <br/>
     ServerName localhost
-<br/>
 </VirtualHost>
 
 <VirtualHost *:80>
 <br/>
     DocumentRoot "/Users/YOURUSERNAME/Documents"
-<br/>
 </VirtualHost>
