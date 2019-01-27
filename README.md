@@ -133,4 +133,4 @@ Now the Default MAMP website should open up, to make sure it all worked you want
 Errors:
 
 
-<img src="notfound.jpg"/ width="100%" width="400px">
+<img src="notfound.jpg" width="100%" width="400px"/>
