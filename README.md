@@ -30,29 +30,50 @@ touch server.csr.cnf
 #6 Edit 'v3.ext'
 #copy + paste below into 'v3.ext' file, and then save it
 
+<br/>
 authorityKeyIdentifier = keyid, issuer
+<br/>
 basicConstraints = CA:FALSE
+<br/>
 keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment
+<br/>
 subjectAltName = @alt_names
+<br/>
 [alt_names]
+<br/>
 DNS.1 = localhost
+<br/>
 
 #7 edit 'server.csr.cnf' file
 #copy + paste below into 'server.csr.cnf' file, and then save it
 
+<br/>
 [req]
+<br/>
 default_bits= 2048
+<br/>
 prompt= no
+<br/>
 default_md= sha256
+<br/>
 distinguished_name = dn
+<br/>
 [dn]
+<br/>
 C = CA
+<br/>
 ST = ON
+<br/>
 L = Ottawa
+<br/>
 O = End Point
+<br/>
 OU = Testing Domain
+<br/>
 emailAddress = yourname@yourdomain.com
+<br/>
 CN = localhost
+<br/>
 
 #8 run more terminal commands
 #This is just a listing of the commands for generating your SSL certificates
@@ -127,7 +148,6 @@ Double click your ssl, hit trust select: when using this certificate, then set t
 
 Now the Default MAMP website should open up, to make sure it all worked you want to change your localhost address to have 'https://'
 <img src="ssl-check-running-properly.gif"/>
-
 
 
 Errors:
