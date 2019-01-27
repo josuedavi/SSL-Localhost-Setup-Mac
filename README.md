@@ -140,10 +140,15 @@ If you get this error it's because your DocumentRoot is incorrect you need to go
 Change DocumentRoot to  the location where you want to load your files fron '/Users/YOURUSERNAME/Documents' 
 
 <VirtualHost *:80>
+<br/>
     DocumentRoot /Users/YOURUSERNAME/Documents
+<br/>
     ServerName localhost
+<br/>
 </VirtualHost>
 
 <VirtualHost *:80>
+<br/>
     DocumentRoot "/Users/YOURUSERNAME/Documents"
+<br/>
 </VirtualHost>
