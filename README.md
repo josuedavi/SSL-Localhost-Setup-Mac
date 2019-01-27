@@ -134,3 +134,16 @@ Errors:
 
 
 <img src="notfound.jpg" width="100%" width="400px"/>
+
+
+If you get this error it's because your DocumentRoot is incorrect you need to go: MAMP/conf/apache/extra/httpd-vhost.conf
+Change DocumentRoot to  the location where you want to load your files fron '/Users/YOURUSERNAME/Documents' 
+
+<VirtualHost *:80>
+    DocumentRoot /Users/YOURUSERNAME/Documents
+    ServerName localhost
+</VirtualHost>
+
+<VirtualHost *:80>
+    DocumentRoot "/Users/YOURUSERNAME/Documents"
+</VirtualHost>
