@@ -128,5 +128,9 @@ Double click your ssl, hit trust select: when using this certificate, then set t
 Now the Default MAMP website should open up, to make sure it all worked you want to change your localhost address to have 'https://'
 <img src="ssl-check-running-properly.gif"/>
 
+
+
 Errors:
-<img src="notfound.jpg"/>
+
+
+<img src="notfound.jpg"/ width="100%" width="400px">
