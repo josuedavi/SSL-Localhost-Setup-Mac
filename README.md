@@ -172,3 +172,5 @@ Change DocumentRoot to  the location where you want to load your files fron '/Us
     DocumentRoot "/Users/YOURUSERNAME/Documents"
 <br/>
 <VirtualHost>
+
+And you need to go to the 'httpd.conf' and 'httpd-ssl.conf' change the DocumentRoot
