@@ -1,0 +1,13 @@
+[req]
+default_bits= 2048
+prompt= no
+default_md= sha256
+distinguished_name = dn
+[dn]
+C = CA
+ST = ON
+L = Ottawa
+O = End Point
+OU = Testing Domain
+emailAddress = yourname@yourdomain.com
+CN = localhost
