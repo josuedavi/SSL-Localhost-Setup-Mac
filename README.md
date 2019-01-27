@@ -28,9 +28,9 @@ touch v3.ext
 touch server.csr.cnf
 
 #6 Edit 'v3.ext'
+
 #copy + paste below into 'v3.ext' file, and then save it
 
-<br/>
 authorityKeyIdentifier = keyid, issuer
 <br/>
 basicConstraints = CA:FALSE
@@ -47,7 +47,6 @@ DNS.1 = localhost
 #7 edit 'server.csr.cnf' file
 #copy + paste below into 'server.csr.cnf' file, and then save it
 
-<br/>
 [req]
 <br/>
 default_bits= 2048
