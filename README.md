@@ -29,7 +29,7 @@ touch server.csr.cnf
 
 #6 Edit 'v3.ext'
 
-#copy + paste below into 'v3.ext' file, and then save it
+#copy + paste below into 'v3.ext' file, and then save it (or copy text from 'v3.ext')
 
 authorityKeyIdentifier = keyid, issuer
 <br/>
@@ -45,7 +45,7 @@ DNS.1 = localhost
 <br/>
 
 #7 edit 'server.csr.cnf' file
-#copy + paste below into 'server.csr.cnf' file, and then save it
+#copy + paste below into 'server.csr.cnf' file, and then save it, (or copy text from 'server.csr.cnf')
 
 [req]
 <br/>
