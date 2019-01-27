@@ -77,3 +77,53 @@ openssl x509 -text -in server.crt -noout
 
 #this should return something like this:
 <img src="ssl-check-everything-is-correct.gif"/>
+
+#you are interested in:'X509v3 Subject Alternative Name: DNS:localhost' and the 'Signature Algorithm'
+
+#9 Now you want to edit the files you opened in step 3:
+/conf/apache/httpd.cong
+/conf/apache/extra/httpd-ssl.cong
+  #BACKUP YOUR FILES FIRST
+
+#EDITS FOR httpd.conf
+
+#9.1. Uncomment these lines
+LoadModule ssl_module modules/mod_ssl.so
+Include /Applications/MAMP/conf/extra/httpd-ssl.conf
+
+#9.2. Change ServerName value
+ServerName localhost:443
+
+#EDITS FOR httpd-ssl.conf
+
+#9.3. Uncomment
+Listen 443
+
+#9.4. Edit VirtualHost opening tag
+<VirtualHost *:443>
+
+#9.5. Inside VirtualHost edit these lines
+  DocumentRoot "/Applications/MAMP/htdocs"
+  ServerName  localhost:443
+  SSLEngine on
+
+#9.6. Add/Uncomment/Edit the two certificate lines
+#make sure to change 'YOURUSERNAME' to your actual username when editing these lines
+SSLCertificateFile "/Users/YOURUSERNAME/ssl/server.crt"
+SSLCertificateKeyFile "/Users/YOURUSERNAME/ssl/server.key"
+
+#10 Make a spotlight search: Keychain Access
+Click 'System'
+Click 'Certificates'
+Click File/Import Items 
+Find your ssl 'rootCA.pem' file then hit open
+Double click your ssl, hit trust select: when using this certificate, then set to always trust
+
+#11 Save files and restart MAMP Servers
+#Make sure your server are setup to:
+#Apache Port: 80
+#MySQL Port: 3036
+
+
+Now the Default MAMP website should open up, to make sure it all worked you want to change your localhost address to have 'https://'
+<img src="ssl-check-running-properly.gif"/>
