@@ -158,17 +158,17 @@ Errors:
 
 If you get this error it's because your DocumentRoot is incorrect you need to go: MAMP/conf/apache/extra/httpd-vhost.conf
 Change DocumentRoot to  the location where you want to load your files fron '/Users/YOURUSERNAME/Documents' 
-
+<pre>
 <VirtualHost *:80>
 <br/>
     DocumentRoot /Users/YOURUSERNAME/Documents
 <br/>
     ServerName localhost
 <br/>
-<p></VirtualHost></p>
+</VirtualHost>
 
 <VirtualHost *:80>
 <br/>
     DocumentRoot "/Users/YOURUSERNAME/Documents"
 <br/>
-<p></VirtualHost></p>
+</VirtualHost></pre>
